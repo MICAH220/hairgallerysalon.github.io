@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Gallery Salon -Service</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
+       <style>
+        /* General Styles */
+         .carousel {
+            display: flex; /* Use flexbox for alignment */
+            justify-content:flex-start; /* left the images */
+            overflow: hidden; /* Hide overflowing content */
+            width: 80%; /* Set a specific width for the carousel */
+            max-width: 800px; /* Optional: Set a max width for the carousel */
+            margin: 0 auto; /* Center the carousel */
+        }
+
+        .carousel img {
+            display: none; /* Hide all images initially */
+            max-width: 70%; /* Set maximum width to 70% of the carousel */
+            max-height: 1000px; /* Set maximum height to 300px */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover; /* Maintain aspect ratio while covering the area */
+        }
+
+        .carousel img.active {
+            display: block; /* Show only the active image */
+        }
+
+        body {
+            font-family: deepskyblue;
+            margin: 0;
+            padding: 0;
+            background-color: deepskyblue; /* Light background color */
+            color: black; /* Dark text color */
+        }
+
+        header {
+            background-color: deepskyblue; /* Header background color */
+            color: white; /* Header text color */
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0; /* Remove default margin */
+        }
+
+        .video-container {
+            display: flex; /* Use flexbox for horizontal alignment */
+            justify-content: left & right; /* Center videos within the container */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            padding: 20px;
+            max-width: 800px; /* Set a maximum width for the container */
+            margin: 0 auto; /* Center the container */
+        }
+
+        .video {
+            width: 180px; /* Fixed width for each video */
+            height: 180px; /* Fixed height for each video */
+            margin: 10px; /* Spacing between videos */
+            background-color: #fff; /* Background color for the video container */
+            border: 1px solid #ddd; /* Light border */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            display: flex; /* Flexbox for vertical alignment */
+            flex-direction: row; /* Stack content horizontally */
+            overflow: hidden; /* Hide overflow */
+        }
+
+        video {
+            width: 100%; /* Make video fill the container */
+            height: 100%; /* Set height to fill the container */
+            object-fit: cover; /* Cover the area while maintaining aspect ratio */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .video {
+                width: 140px; /* Adjust width for smaller screens */
+                height: 140px; /* Adjust height for smaller screens */
+            }
+        }
+
+        /* Services Section */
+        .services {
+            display: flex;
+            justify-content: space-around; /* Evenly space out service items */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            padding: 20px;
+            max-width: 1200px; /* Maximum width of the services section */
+            margin: 0 auto; /* Center the section */
+        }
+
+        .service {
+            background: whitesmoke; /* White background for service items */
+            border: 1px solid #ddd; /* Light border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 15px;
+            margin: 10px;
+            flex: 1 1 30%; /* Responsive flex item */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: transform 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .service:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+
+        .service h2 {
+            color: darkgrey; /* Color for service titles */
+        }
+
+        /* Media Styles */
+        .media {
+            max-width: 80%; /* Full width on small screens */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 300px; /* Set maximum height for images and videos */
+            object-fit: cover; /* Maintain aspect ratio while covering */
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: deepskyblue; /* Footer background color */
+            color:darkgreen ; /* Footer text color */
+            text-align: center;
+            padding: 10px;
+            position: relative; /* Position footer */
+            bottom: 0; /* Align to bottom */
+            width: 100%; /* Full width */
+        }
+
+            .services {
+                flex-direction: rows; /* Stack services vertically on small screens */
+                align-items: left; /* left items */
+
+            }
+
+            .service {
+                flex: 1 1 80%; /* Make service items wider on small screens */
+            }
+        }
+    </style
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Service.html">Service</a></li>
+                <li><a href="Contact.html">Contact </a></li>
+                <li><a href="About Us.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+       <h1>Our Services</h1>
+    
+    <!-- Services Offered -->
+    <div class="services">
+        <div class="service">
+            <h3>Haircuts</h3>
+            <p>Stylish cuts for all hair types, tailored to suit your face shape.</p>
+        </div>
+        <div class="service">
+            <h3>Coloring</h3>
+            <p>Vibrant colors and highlights to enhance your natural beauty.</p>
+        </div>
+        <div class="service">
+            <h3>Styling</h3>
+            <p>Expert styling for special occasions or everyday elegance.</p>
+        </div>
+        <div class="service">
+            <h3>Treatments</h3>
+            <p>Deep conditioning and hair treatments for healthier hair.</p>
+        </div>
+        <div class="service">
+            <h3>Extensions</h3>
+            <p>Add length and volume with our premium hair extensions.</p>
+        </div>
+        <div class="service">
+            <h3>Bridal Services</h3>
+            <p>Customized bridal packages for your big day.</p>
+        </div>
+    </div>
+    <!... the section for pictures ...>
+        <section  id="carousel">
+            <div class="carousel">
+       <div class="gallery-images">
+            <h2>Gallery</h2>
+
+            <img src="cuts3.jpg" alt="cuts3.jpg">
+            <img src="Hair1.jpg" alt="Hair1.jpg">
+            <img src="hair3.jpg" alt="hair3.jpg">
+            <img src="style1.jpg" alt="Style1.jpg">
+            <img src="hair4.jpg" alt="hair4.jpg">
+            <img src="hair5.jpg" alt="hair5.jpg">
+        </div>
+    </section>
+</div>
+<div class="video-container"> 
+                    <h2>Watch our services in action</h2>
+                    <!--video section-->
+                    <section>
+                        <video controls>
+                            <source src="cut.mp4" type="video/mp4">
+                               
+                  </video>
+                    </section>
+
+                </div>
+                <div class="video-container">
+                    <!--video section-->
+                    <section>
+                        <video controls>
+                            <source src="hairstyle.mp4" type="video/mp4">
+                  </video>
+                    </section>
+
+                </div>
+    <footer>
+        <p>&copy; 2024 HAIR GALLERY SALON. All rights reserved</p>
+    </footer>
+</div>
+   <script>
+        let currentIndex = 0; // Track the current image index
+        const images = document.querySelectorAll('.carousel img'); // Select all images in the carousel
+
+        // Function to show the current image
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.style.display = (i === index) ? 'block' : 'none'; // Only display the current image
+            });
+        }
+
+        // Function to advance to the next image
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
+            showImage(currentIndex);
+        }
+
+        // Show the first image initially
+        showImage(currentIndex);
+        // Set an interval to change images every 3 seconds
+        setInterval(nextImage, 3000);
+    </script>
+
+
+   </body>
+</html>

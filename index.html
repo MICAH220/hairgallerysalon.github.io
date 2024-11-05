@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple Carousel Test</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .carousel {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .carousel img {
+            display: none; /* Hide all images initially */
+            max-width: 70%; /* Make images responsive */
+            max-height: 400px; /* Maintain aspect ratio */
+            object-fit: cover;
+        }
+
+        .carousel img.active {
+            display: block; /* Show only the active image */
+        }
+
+        body {
+            font-family: Arial, sans-serif; /* Use a standard font */
+            margin: 0;
+            padding: 0;
+            background-color: deepskyblue; /* Set background color to coral */
+            color: #FF6F61; /* Change text color to white for contrast */
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            background-color: #FF6F61; /* Navbar background color */
+            color: white; /* Text color */
+            padding: 10px 0; /* Vertical padding */
+            text-align: center; /* Center the text */
+        }
+
+        .navbar ul {
+            list-style: #FF6F6 ; /* Remove bullet points */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center the items */
+        }
+
+        .navbar li {
+            margin: 0 15px; /* Space between items */
+        }
+
+        .navbar a {
+            text-decoration: #FF6F6 ; /* Remove underline from links */
+            color: white; /* Link text color */
+            font-weight: bold; /* Bold text */
+            font-size: 16px; /* Font size */
+        }
+
+        .navbar a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Content Container */
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff; /* White background for the content */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333; /* Dark gray for headings */
+        }
+
+        h2 {
+            color: #FF6F61; /* Use coral color for subheadings */
+        }
+
+        p {
+            line-height: 1.6;
+            color: #666; /* Light gray for paragraph text */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: deepskyblue; /* Footer background color */
+            color: deepgreen; /* Footer text color */
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Service.html">Service</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="container">
+            <section class="Welcome">
+                <h1>WELCOME TO HAIR GALLERY SALON</h1>
+                <p>"AT Hair Gallery Salon"! ... we do believe that client is unique. Our purpose is
+                    to provide personalized hair care experiences that not only transform your look
+                    but also boost your confidence. Our talented stylists stay updated with the latest
+                    trends, whether haircuts, coloring, or styling, to ensure that our clients leave feeling 
+                    their best!</p>
+            </section>
+            <div class="carousel">
+                <h2>The highlight of what we offer</h2>
+                <img src="stylishcut1.jpg" alt="Stylish Cut" class="active">
+                <img src="dye1.jpg" alt="Dye">
+                <img src="trendy hair braid.JPG" alt="Trendy Hair Braid">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 HAIR GALLERY SALON. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.remove('active');
+                if (i === index) {
+                    img.classList.add('active');
+                }
+            });
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        showImage(currentIndex);
+        setInterval(nextImage, 3000); // Change image every 3 seconds
+    </script>
+</body>
+</html>
